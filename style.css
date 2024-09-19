@@ -473,7 +473,7 @@ section {
   color: var(--second-bg-color);
 }
 
-/* Navbar styles for mobile */
+/* Media queries for medium and small screens */
 .navbar {
   display: flex;
   align-items: center;
@@ -513,64 +513,71 @@ section {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1050px) {
   .home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Align content to start, giving space for image at bottom */
+    align-items: center;
+    height: 100vh; /* Or use min-height to ensure it covers the full viewport height */
+    padding-top: 50px; /* Adjust top padding if header is overlapping content */
   }
 
   .home-content {
-    z-index: 2; /* Make sure content stays above the image */
-    width: 100%; /* Use full width for smaller screens */
-    text-align: center; /* Center the text within the content */
-    padding: 2rem; /* Add padding for better spacing */
-    max-width: none; /* Remove any max-width if set */
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 0px; /* Space between content and image */
+    z-index: 2; /* Higher z-index to maintain layering */
+    margin-top: 100px;
   }
 
   .home-img {
     position: absolute;
-    top: 10%;
-    left: 0;
-    width: 100%; /* Cover the full width of the viewport */
-    height: 100%; /* Cover the full height of the viewport */
-    z-index: 1; /* Lower z-index to move it to the background */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-  }
-
-  .home-img::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    z-index: -1; /* Ensure the overlay is below all content but above the image */
+    width: 80%;
+    right: -5%; /* Center the image horizontally */
+    bottom: 0; /* Stick to bottom */
+    z-index: 1; /* Lower z-index so content is over image if overlap */
   }
 
   .home-img img {
-    opacity: 0.4;
+    width: 60%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure it takes up the entire space of .home-img */
+    margin-top: 0%;
   }
+
   .home-content h1 {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 700;
     line-height: 1.3;
-    background: linear-gradient(to right, #3e3223, #d08d49);
+    background: var(--heading-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .home-content h3 {
-    font-size: 3rem;
-    width: 100%;
+    font-size: 2rem;
   }
 
   .home-content p {
-    font-size: 1.6rem;
-    width: 90%;
-    font-weight: bold;
+    font-size: 1.3rem;
+    width: 100%;
+  }
+
+  .social-media a {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    margin-bottom: 1%;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 1rem 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 0;
   }
 }
