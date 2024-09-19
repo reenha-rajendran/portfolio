@@ -1,11 +1,10 @@
-/*==toggle icon navbar==*/
-let menuIcon = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
+// Toggle Navbar visibility
+const menuIcon = document.getElementById("menu-icon");
+const navbar = document.querySelector(".navbar");
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle("bx-x");
-  navbar.classList.toggle("active");
-};
+menuIcon.addEventListener("click", () => {
+  navbar.classList.toggle("active"); // Toggle the 'active' class
+});
 
 /*==scroll section active link (showing which section you are currently at in the Navbar)==*/
 
