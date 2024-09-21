@@ -61,3 +61,11 @@ const typed = new Typed(".multiple-text", {
   backDelay: 100,
   loop: true,
 });
+
+emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+  name: document.querySelector('[name="name"]').value,
+  email: document.querySelector('[name="email"]').value,
+  mobile: document.querySelector('[name="mobile"]').value,
+  subject: document.querySelector('[name="subject"]').value,
+  message: document.querySelector('[name="message"]').value,
+});
